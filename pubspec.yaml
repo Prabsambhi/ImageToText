@@ -27,15 +27,15 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  flutter:
+    sdk: flutter
   http:
-  image_picker:
+  image_picker: ^0.8.5
   esys_flutter_share:
       git:
         url: https://github.com/cihadturhan/esys-flutter-share.git
         ref: nullsafety+embedding-2
   clipboard: 
-  flutter:
-    sdk: flutter
 
 
   # The following adds the Cupertino Icons font to your application.
