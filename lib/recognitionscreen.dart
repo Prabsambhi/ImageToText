@@ -24,7 +24,9 @@ class _RecognitionScreenState extends State<RecognitionScreen> {
           children: [
             FloatingActionButton(
               heroTag: null,
-              onPressed: () {},
+              onPressed: () {
+                pickmedia(ImageSource.camera);
+              },
               child: Icon(Icons.copy, size: 28),
             ),
             SizedBox(
@@ -34,7 +36,7 @@ class _RecognitionScreenState extends State<RecognitionScreen> {
               backgroundColor: Color(0xffEC360E),
               heroTag: null,
               onPressed: () {
-                pickmedia();
+                pickmedia(ImageSource.gallery);
               },
               child: Icon(Icons.reply, size: 34),
             )
@@ -64,9 +66,7 @@ class _RecognitionScreenState extends State<RecognitionScreen> {
                                 width: 256,
                                 height: 256,
                                 fit: BoxFit.fill,
-                                image: AssetImage('images/uploadfile.png'))
-                            // : FileImage(pickedImage) as ImageProvider),
-                            ),
+                                image: AssetImage('images/uploadfile.png'))),
                     SizedBox(
                       height: 30,
                     ),
@@ -82,8 +82,12 @@ class _RecognitionScreenState extends State<RecognitionScreen> {
                 ))));
   }
 
-  void pickmedia() async {
-    XFile? file = await ImagePicker().pickImage(source: ImageSource.gallery);
+  void pickmedia(ImageSource source) async {
+    XFile? file = await ImagePicker().pickImage(
+        source: source,
+        // maxWidth: 400,
+        // maxHeight: 256,
+        imageQuality: 100);
     if (file != null) {
       imagePath = file.path;
       setState(() {});
