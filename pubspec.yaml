@@ -30,7 +30,8 @@ dependencies:
   flutter:
     sdk: flutter
   http:
-  image_picker: ^0.8.5
+  image_picker: ^0.8.5+3
+  google_ml_kit: ^0.11.0
   esys_flutter_share:
       git:
         url: https://github.com/cihadturhan/esys-flutter-share.git
