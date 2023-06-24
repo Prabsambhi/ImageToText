@@ -37,6 +37,7 @@ dependencies:
         url: https://github.com/cihadturhan/esys-flutter-share.git
         ref: nullsafety+embedding-2
   clipboard: 
+  flutter_tts: ^3.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
